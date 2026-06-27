@@ -20,7 +20,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     notificationService.list().then((res) => {
-      setNotifications(res.notifications?.data || res.notifications || []);
+      setNotifications((res.notifications as any)?.data || res.notifications || []);
       setUnreadCount(res.unread_count || 0);
     }).catch(() => {});
   }, []);

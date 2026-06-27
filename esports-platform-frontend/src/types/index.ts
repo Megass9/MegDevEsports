@@ -13,6 +13,7 @@ export interface User {
   created_at: string;
   teams?: Team[];
   team_memberships?: Team[];
+  pivot?: { is_substitute: boolean; team_id: number };
 }
 
 export interface Team {
@@ -34,6 +35,7 @@ export interface Team {
   points: number;
   members?: User[];
   members_count?: number;
+  matches?: Match[];
   created_at: string;
   pivot?: { is_substitute: boolean };
 }

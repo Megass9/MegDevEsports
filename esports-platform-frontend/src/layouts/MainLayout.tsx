@@ -158,11 +158,11 @@ export default function MainLayout() {
                       className="flex items-center gap-2 p-1.5 hover:bg-surface-400 rounded-lg transition-all"
                     >
                       <img
-                        src={user.avatar_url}
-                        alt={user.name}
+                        src={user!.avatar_url}
+                        alt={user!.name}
                         className="w-8 h-8 rounded-full object-cover"
                       />
-                      <span className="hidden sm:block text-sm text-gray-300">{user.name}</span>
+                      <span className="hidden sm:block text-sm text-gray-300">{user!.name}</span>
                       <ChevronDown className="w-3 h-3 text-gray-500" />
                     </button>
 
@@ -171,8 +171,8 @@ export default function MainLayout() {
                         <div className="fixed inset-0 z-10" onClick={() => setProfileOpen(false)} />
                         <div className="absolute right-0 mt-2 w-56 bg-surface-400 border border-gray-700 rounded-xl shadow-2xl z-20 py-2 animate-fade-in">
                           <div className="px-4 py-3 border-b border-gray-700">
-                            <p className="text-sm font-medium text-white">{user.name}</p>
-                            <p className="text-xs text-gray-400">{user.email}</p>
+                            <p className="text-sm font-medium text-white">{user!.name}</p>
+                            <p className="text-xs text-gray-400">{user!.email}</p>
                           </div>
                           <Link
                             to="/profile"

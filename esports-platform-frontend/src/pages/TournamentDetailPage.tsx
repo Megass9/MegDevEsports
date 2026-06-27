@@ -54,8 +54,9 @@ export default function TournamentDetailPage() {
   }, [id]);
 
   useEffect(() => {
-    if (tournament?.chat_rooms?.length > 0) {
-      setChatRoom(tournament.chat_rooms[0]);
+    const rooms = tournament?.chat_rooms;
+    if (rooms && rooms.length > 0) {
+      setChatRoom(rooms[0]);
     }
   }, [tournament]);
 

@@ -10,14 +10,14 @@ export default function MaintenancePage() {
           <span className="text-4xl">🔧</span>
         </div>
         <h1 className="text-3xl font-display font-bold text-white mb-3">
-          {t('maintenance.title', 'Bakım Modu')}
+          {t('maintenance.title')}
         </h1>
         <p className="text-gray-400 leading-relaxed mb-8">
-          {t('maintenance.description', 'Sitemiz şu anda bakım çalışmaları nedeniyle geçici olarak hizmet dışıdır. Kısa süre içinde tekrar yayında olacağız. Anlayışınız için teşekkür ederiz.')}
+          {t('maintenance.description')}
         </p>
         <div className="flex items-center justify-center gap-3 text-sm text-gray-500">
           <div className="w-2 h-2 rounded-full bg-valorant animate-pulse" />
-          {t('maintenance.status', 'Bakım devam ediyor...')}
+          {t('maintenance.status')}
         </div>
       </div>
     </div>

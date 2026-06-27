@@ -1,0 +1,32 @@
+/*
+!/esports-platform
+!/esports-platform-frontend
+!/.gitignore
+!/.github
+
+# Laravel
+/esports-platform/vendor/
+/esports-platform/node_modules/
+/esports-platform/.env
+/esports-platform/storage/logs/*.log
+/esports-platform/storage/framework/cache/data/*
+/esports-platform/storage/framework/sessions/*
+/esports-platform/storage/framework/views/*
+/esports-platform/storage/debugbar/*
+/esports-platform/bootstrap/cache/*.php
+/esports-platform/public/hot
+/esports-platform/public/storage
+/esports-platform/.phpunit.result.cache
+/esports-platform/.php_cs.cache
+
+# React
+/esports-platform-frontend/node_modules/
+/esports-platform-frontend/dist/
+/esports-platform-frontend/.env.local
+/esports-platform-frontend/.env.development.local
+/esports-platform-frontend/.env.test.local
+/esports-platform-frontend/.env.production.local
+
+# OS
+Thumbs.db
+.DS_Store

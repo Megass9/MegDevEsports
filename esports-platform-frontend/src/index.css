@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-surface-400;
+  }
+
+  body {
+    @apply bg-surface-500 text-gray-100 antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-500;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-valorant hover:bg-accent-hover text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-400 hover:bg-surface-300 text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 border border-gray-700;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-surface-400 text-gray-300 hover:text-white px-4 py-2 rounded-lg transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full bg-surface-400 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-valorant focus:ring-1 focus:ring-valorant transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-surface-500 border border-surface-400 rounded-xl p-6;
+  }
+
+  .card-hover {
+    @apply hover:border-gray-600 transition-all duration-200;
+  }
+
+  .section-title {
+    @apply text-2xl font-display font-bold text-white;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-valorant to-pink-500 bg-clip-text text-transparent;
+  }
+
+  .stat-value {
+    @apply text-2xl font-display font-bold text-white;
+  }
+
+  .stat-label {
+    @apply text-sm text-gray-400 font-medium;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-valorant/20 text-valorant;
+  }
+
+  .badge-success {
+    @apply badge bg-green-500/20 text-green-400;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-500/20 text-yellow-400;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-500/20 text-red-400;
+  }
+
+  .table-header {
+    @apply px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider;
+  }
+
+  .table-cell {
+    @apply px-4 py-3 whitespace-nowrap text-sm;
+  }
+}

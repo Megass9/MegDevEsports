@@ -1,0 +1,33 @@
+$team = App\Models\Team::find(14);
+echo 'Team: ' . $team->name . "\n";
+
+$tournament = App\Models\Tournament::find(1);
+
+// Emre'nin takımını mevcut maça ekle veya yeni maç oluştur
+$existingMatch = $tournament->matches()->where('round', 1)->first();
+if ($existingMatch && !$existingMatch->team1_id) {
+    $existingMatch->update(['team1_id' => 14]);
+    echo 'Added to existing match #' . $existingMatch->id . "\n";
+} elseif ($existingMatch && !$existingMatch->team2_id) {
+    $existingMatch->update(['team2_id' => 14]);
+    echo 'Added to existing match #' . $existingMatch->id . "\n";
+} else {
+    // Yeni maç oluştur: Emre vs Test Team
+    $opponent = App\Models\Team::find(2);
+    $match = new App\Models\MatchModel();
+    $match->tournament_id = 1;
+    $match->round = 1;
+    $match->match_number = 2;
+    $match->team1_id = 14;
+    $match->team2_id = 2;
+    $match->status = 'scheduled';
+    $match->save();
+    echo 'Created new match #' . $match->id . ': ' . $team->name . ' vs ' . $opponent->name . "\n";
+}
+
+// Tüm maçları göster
+$matches = $tournament->matches()->with(['team1', 'team2'])->get();
+echo "\nAll matches:\n";
+foreach ($matches as $m) {
+    echo '  #' . $m->id . ': ' . ($m->team1->name ?? 'TBD') . ' vs ' . ($m->team2->name ?? 'TBD') . ' R' . $m->round . ' (' . $m->status . ')' . "\n";
+}
